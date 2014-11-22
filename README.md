@@ -1,11 +1,15 @@
 # grunt-zip-to-crx
 
+> The plugin generates chrome extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
+
+adsfasfd
+
 > Converts zipped files into chrome extension file (.crx).
 
 The plugin generates chrome extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
 
 ## Overview
-Chrome extension is a zipped file with added electronic signature. This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is activly maintained.
+Chrome extension is a zipped file with added electronic signature. This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained. 
 
 Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. TODO
 
