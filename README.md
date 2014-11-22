@@ -4,9 +4,7 @@
 
 The plugin generates [chrome extension](https://developer.chrome.com/extensions) files (.crx) from zipped projects. Chrome extension bundles all its content inside a zipped file. The zip file must be signed and signature is distributed along with packed content inside .crx file. 
 
-This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained by grunt team. Use it to pack you extension files.
-
-Once you have .zip with `manifest.json` and everything else inside, you can use this plugin to sign it and generate chrome extension distribution (.crx).
+This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained by grunt team. Use it to pack you extension files. Once you have .zip with `manifest.json` and everything else inside, you can use this plugin to sign it and generate chrome extension distribution (.crx).
 
 Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. Its main advantage is ability to both zip files and sign files, so you probably want to give it a try. Its main disadvantage is speed - it copies everything into temporary directory, then deletes excluded files and packs the result. This is fine on small projects or when you have all extension files in separate directory. However, it may end up copying a lot of files (whole `.git` directory) on some projects and that was very slow.
 
