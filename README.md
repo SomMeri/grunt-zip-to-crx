@@ -2,10 +2,17 @@
 
 > Converts zipped files into chrome extension file (.crx).
 
-The plugin generates extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
+The plugin generates chrome extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
 
 ## Overview
+Chrome extension is a zipped file with added electronic signature. This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is activly maintained.
 
+Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. TODO
+
+## Dependencies
+The project requires [`openssl`](http://www.openssl.org/) installed and available on path. Windows and solaris distributions are available [here](https://www.openssl.org/related/binaries.html).
+
+Note: If I will have time, I will remove this dependency. Unfortunately, that reuqires me to decode/encode ans1 files. Altrough decoder is available, I did not found encoder yet.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
