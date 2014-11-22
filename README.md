@@ -2,6 +2,11 @@
 
 > Converts zipped files into chrome extension file (.crx).
 
+The plugin generates extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
+
+## Overview
+
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
