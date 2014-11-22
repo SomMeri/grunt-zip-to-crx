@@ -1,17 +1,14 @@
 # grunt-zip-to-crx
 
-> The plugin generates chrome extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
+> Converts zipped file into chrome extension file (.crx).
 
-adsfasfd
+The plugin generates [chrome extension](https://developer.chrome.com/extensions) files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
 
-> Converts zipped files into chrome extension file (.crx).
+Chrome extension bundles all its content inside a zipped file. The zip file must be signed and distributed along with signature inside file with .crx suffix. This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained. 
 
-The plugin generates chrome extension files (.crx) from zipped projects. It is meant to be used together with [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) plugin.
+This plugin takes generated .zip file, signs it and 
 
-## Overview
-Chrome extension is a zipped file with added electronic signature. This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained. 
-
-Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. TODO
+Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. Its main advantage is that it is able to both zip files and sign files. Its main disadvantage is that it is slow and copies/deletes a lot of files.
 
 ## Dependencies
 The project requires [`openssl`](http://www.openssl.org/) installed and available on path. Windows and solaris distributions are available [here](https://www.openssl.org/related/binaries.html).
