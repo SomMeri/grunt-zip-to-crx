@@ -34,8 +34,7 @@ In your project's Gruntfile, add a section named `zip_to_crx` to the data object
 
 
 ### Options
-
-#### options.privateKey
+Property: `options.privateKey` (mandatory)
 Type: `String` (mandatory)
 
 A path to pem encoded private key file.
