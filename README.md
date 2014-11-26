@@ -36,10 +36,14 @@ In your project's Gruntfile, add a section named `zip_to_crx` to the data object
 grunt.initConfig({
   zip_to_crx: {
     options: {
-      // Task-specific options go here.
+      // Location of pem oncoded private key. 
+      privateKey: "test/ssl-keys/local.pem"
     },
     your_target: {
-      // Target-specific file lists and/or options go here.
+        // all zip files in tmp are assumed to be future extentions
+        src: "tmp/*.zip", 
+        // .crx will be placed in the distribution directory
+        dest: "distribution/"
     },
   },
 });
