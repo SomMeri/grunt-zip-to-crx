@@ -33,7 +33,7 @@ The zip_to_crx needs to know:
 * where to put the result and how to name it,
 * private key to be used for signing.
 
-Private key must be stored in a pem encoded file. OpenSSL is able to generate such files from command line. Use either of these two commands:
+Private key must be stored in a pem encoded file. OpenSSL is able to [generate](https://www.openssl.org/docs/HOWTO/keys.txt) such files from command line. Use either of these two commands:
 ```
 # generate private key file
 openssl genrsa -des3 -out private-key.pem 2048
