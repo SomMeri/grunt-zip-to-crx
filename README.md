@@ -39,7 +39,7 @@ Input and output files are configured using the usual `src` and `dest` pairs. So
 * `src: 'all/in/this/directory/*.zip'`
 * `src: ['path/to/file.zip', 'different/zipped.zip', 'globbing/*.zip']`.
 
-Destination property `dest` must contain path to single directory or single filename. If it is not specified, plugin will guess output filename from input zip name and place it into the project root.
+Destination property `dest` must contain path to single directory or single filename. If it is not specified, plugin will guess output filename from input zip name and place it into the project root. If the `src`property contains multipe files,  then the `dest` must contain directory.
 
 
 ### Options
