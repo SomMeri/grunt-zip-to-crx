@@ -56,8 +56,18 @@ Example:
 ```js
 options: {
   // Location of pem oncoded private key. 
-  privateKey: "test/ssl-keys/local.pem"
+  privateKey: "../ssl-keys/local.pem"
 }
+```
+
+Following command to generates password protected `private-key.pem` file:
+```
+openssl genrsa -des3 -out private-key.pem 2048
+```
+
+Following command to generates `private-key.pem` file with no password:
+```
+openssl genrsa -des3 -out private-key.pem 2048
 ```
 
 ### Usage Examples

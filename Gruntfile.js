@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       one_extension: {
         options: {
-          privateKey: "test/ssl-keys/local.pem"
+          privateKey: "../ssl-keys/private-key.pem"
         },
         src: "*.zip",
         dest: "directory/"
