@@ -32,6 +32,17 @@ grunt.loadNpmTasks('grunt-zip-to-crx');
 ### Overview
 In your project's Gruntfile, add a section named `zip_to_crx` to the data object passed into `grunt.initConfig()`.
 
+
+### Options
+
+#### options.privateKey
+Type: `String` (mandatory)
+
+A path to pem encoded private key file.
+
+### Usage Examples
+
+#### Crx From All Zip Files
 Find all .zip files in `tmp/` directory, sign them and place results into the `distribution` directory:
 ```js
 grunt.initConfig({
@@ -50,6 +61,7 @@ grunt.initConfig({
 });
 ```
 
+#### Crx From One Zip File
 Convert `tmp/my-supercool-extension-<version>.zip` into `distribution/my-supercool-extension-<version>.crx` file:
 ```js
 grunt.initConfig({
@@ -68,6 +80,7 @@ grunt.initConfig({
 });
 ```
 
+#### Crx From One Zip File - Alternative
 If the `dest` ends with slash `/`, plugin will treat it as a directory. .crx file name is guessed from input .zip file name. This generates output file as the previous configuration:
 ```js
 grunt.initConfig({
@@ -85,13 +98,6 @@ grunt.initConfig({
   },
 });
 ```
-
-### Options
-
-#### options.privateKey
-Type: `String` (mandatory)
-
-A path to pem encoded private key file.
 
 ### Usage Examples
 
