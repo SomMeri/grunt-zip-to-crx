@@ -34,16 +34,22 @@ The zip_to_crx needs to know:
 * private key to be used for signing.
 
 ### Source and Destination
-Input and output files are configured using the usual `src` and `dest` pairs. Source property `src` may contain either a path towards .zip file or a list of them:
+Input and output files are configured using the usual `src` and `dest` pairs. Source property `src` may contain either a path towards .zip file or a list of them.
+
+Examples:
 * `src: 'path/to/file.zip'`,
 * `src: 'all/in/this/directory/*.zip'`
 * `src: ['path/to/file.zip', 'different/zipped.zip', 'globbing/*.zip']`.
 
 Destination property `dest` must contain path to single directory or single filename. Directory path must end with a slash `/`. If the `src`property references multipe files,  then the `dest` must contain directory. 
+
+If the `dest` property contains a directory, plugin guesses output filename from input file name.
+
+Examples:
 * `dest: 'path/to/file.crx'`,
 * `dest: 'path/to/directory/`.
 
-Destination property is optional. If it is not specified, plugin will guess output filename from input zip name and place it into the project root. 
+Destination property is optional. If it is not specified, plugin guesses output filename from input file name and places the result into the project root. 
 
 
 ### Options
