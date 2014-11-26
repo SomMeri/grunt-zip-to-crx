@@ -33,12 +33,24 @@ The zip_to_crx needs to know:
 * where to put the result and how to name it,
 * private key to be used for signing.
 
+### Private Key
 Private key must be stored in a pem encoded file. OpenSSL is able to [generate](https://www.openssl.org/docs/HOWTO/keys.txt) such files from command line. Use either of these two commands:
 ```
 # generate password protected private key file
 openssl genrsa -des3 -out private-key.pem 2048
 # generate private key without password
 openssl genrsa -out private-key.pem 2048
+```
+
+### Options
+Zip_to_crx task requires `privateKey` option property. Its value must be a string and must contain path to pem encoded private key file.
+
+Example:
+```js
+options: {
+  // Location of pem oncoded private key. 
+  privateKey: "../ssl-keys/private-key.pem"
+}
 ```
 
 ### Source and Destination
@@ -56,17 +68,6 @@ Examples:
 * `dest: 'path/to/directory/`.
 
 Destination property is optional. If the `dest` does not specify filename, e.g. is empty or contains a directory, plugin guesses output filename from input file name.
-
-### Options
-Zip_to_crx task requires `privateKey` option property. Its value must be a string and must contain path to pem encoded private key file.
-
-Example:
-```js
-options: {
-  // Location of pem oncoded private key. 
-  privateKey: "../ssl-keys/private-key.pem"
-}
-```
 
 ### Usage Examples
 First three examples show three different ways how to configure zip_to_crx task. The last example shows whole Grunt.js file, including [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) part.
