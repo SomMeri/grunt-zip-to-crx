@@ -66,7 +66,7 @@ Example:
 ```js
 options: {
   // Location of pem oncoded private key. 
-  privateKey: "../ssl-keys/local.pem"
+  privateKey: "../ssl-keys/private-key.pem"
 }
 ```
 
@@ -80,7 +80,7 @@ grunt.initConfig({
   zip_to_crx: {
     options: {
       // Location of pem oncoded private key. 
-      privateKey: "../ssl-keys/local.pem"
+      privateKey: "../ssl-keys/private-key.pem"
     },
     your_target: {
         // all zip files in tmp are assumed to be future extentions
@@ -99,7 +99,7 @@ grunt.initConfig({
   zip_to_crx: {
     options: {
       // Location of pem oncoded private key. 
-      privateKey: "../ssl-keys/local.pem"
+      privateKey: "../ssl-keys/private-key.pem"
     },
     your_target: {
         // input zip file
@@ -118,7 +118,7 @@ grunt.initConfig({
   zip_to_crx: {
     options: {
       // Location of pem oncoded private key. 
-      privateKey: "../ssl-keys/local.pem"
+      privateKey: "../ssl-keys/private-key.pem"
     },
     your_target: {
         // input zip file
@@ -156,7 +156,7 @@ module.exports = function(grunt) {
     zip_to_crx: {
       options: {
         // Location of pem oncoded private key. 
-        privateKey: "../ssl-keys/local.pem"
+        privateKey: "../ssl-keys/private-key.pem"
       },
       your_target: {
           // input zip file
