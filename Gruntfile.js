@@ -2,7 +2,6 @@
  * grunt-zip-to-crx
  * https://github.com/SomMeri/grunt-zip-to-crx
  *
- * Copyright (c) 2014 Maria Jurcovicova
  * Licensed under the MIT license.
  */
 
@@ -30,14 +29,32 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     zip_to_crx: {
-      default_options: {
+//      missing_src: {
+//        options: {
+//        },
+//        privateKey: "something.pem"
+//      },
+      options: {
+        privateKey: "global.pem"
+      },
+      one_extension: {
+        options: {
+          privateKey: "test/ssl-keys/local.pem"
+        },
+        src: "*.zip",
+        dest: "directory/"
+      }/*,
+      one_with_dest: {
         options: {
         },
         files: {
           'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        },
+        privateKey: "something.pem",
+        src: "archive.zip",
+        dest: "renamed_archive.crx"
       },
-      custom_options: {
+      multiple_extensions: {
         options: {
           separator: ': ',
           punctuation: ' !!!'
@@ -45,7 +62,7 @@ module.exports = function(grunt) {
         files: {
           'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
         }
-      }
+      }*/
     },
 
     // Unit tests.
