@@ -12,7 +12,7 @@ The project requires [`openssl`](http://www.openssl.org/) installed and availabl
 Note: I would like to remove this dependency. Unfortunately, that requires me to decode/encode ans1 files. Although decoder is available, I did not found encoder yet.
 
 ## Alternatives
-There is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. Its main advantage is ability to both zip files and sign files, so you probably want to give it a try. Its main disadvantage is speed - it copies everything into temporary directory, then deletes excluded files and packs the result. This is fine on small projects or when you have all extension files in separate directory. However, it may end up copying a lot of files (whole `.git` directory) on some projects and that was very slow.
+There is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. Its main advantage is ability to both zip files and sign files, so you might want to give it a try. Its main disadvantage is speed - it copies everything into temporary directory, then deletes excluded files and packs the result. This is fine on small projects or when you have all extension files in separate directory. However, it may end up copying a lot of files (whole `.git` directory) on some projects and that was very slow.
 
 ## Getting Started
 Install this plugin with this command:
@@ -21,20 +21,24 @@ Install this plugin with this command:
 npm install grunt-zip-to-crx --save-dev
 ```
 
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+Installed plugin is enabled inside Gruntfile with this line of JavaScript:
 
 ```js
 grunt.loadNpmTasks('grunt-zip-to-crx');
 ```
 
 ## The "zip_to_crx" task
+The zip_to_crx needs to know three things:
+* which file(s) should be converted into .crx,
+* where to put the result and how to name it,
+* private key to use for signing.
 
-### Overview
+### Source and Destination
 In your project's Gruntfile, add a section named `zip_to_crx` to the data object passed into `grunt.initConfig()`.
 
 
 ### Options
-Zip_to_crx task accepts one mandatory option:
+Zip_to_crx task requires one mandatory option:
 * Property: `privateKey` 
 * Type: `String` 
 * value: A path to pem encoded private key file.
