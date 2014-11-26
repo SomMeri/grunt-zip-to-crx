@@ -64,6 +64,7 @@ options: {
 ```
 
 ### Usage Examples
+First three examples show three different ways how to configure zip_to_crx task. The last example shows whole Grunt.js file, including [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) part.
 
 #### Crx From All Zip Files
 Find all .zip files in `tmp/` directory, sign them and place results into the `distribution` directory:
@@ -104,7 +105,7 @@ grunt.initConfig({
 ```
 
 #### Crx From One Zip File - Alternative
-If the `dest` ends with slash `/`, plugin will treat it as a directory. .crx file name is guessed from input .zip file name. This generates output file as the previous configuration:
+If the `dest` ends with slash `/`, plugin will treat it as a directory. .crx file name is guessed from input .zip file name. This generates the same output file as the previous configuration:
 ```js
 grunt.initConfig({
   zip_to_crx: {
@@ -120,6 +121,50 @@ grunt.initConfig({
     },
   },
 });
+```
+
+#### Full Configuration
+Example configuration that does both zipping and signing. It generates the same output file as previous two examples:
+```js
+module.exports = function(grunt) {
+
+  grunt.initConfig({
+      compress: {
+        main: {
+          options: {
+            archive: 'tmp/my-supercool-extension-<version>.zip'
+          },
+          files: [
+            {src: ['_locales/**']},
+            {src: ['doc/**']}, 
+            {src: ['icons/**']}, 
+            {src: ['lib/**']}, 
+            {src: ['skin/**']}, 
+            {src: ['src/**']}, 
+            {src: ['tests/**']},
+            {src: ['manifest.json']}
+          ]
+        }
+      },
+    zip_to_crx: {
+      options: {
+        // Location of pem oncoded private key. 
+        privateKey: "test/ssl-keys/local.pem"
+      },
+      your_target: {
+          // input zip file
+          src: "tmp/my-supercool-extension-<version>.zip", 
+          // output .crx file
+          dest: "distribution/"
+      },
+    },
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-zip-to-crx');
+
+  grunt.registerTask('build', ['compress', 'zip_to_crx']);
+};
 ```
 
 ## Contributing
