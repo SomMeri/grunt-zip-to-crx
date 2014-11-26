@@ -15,6 +15,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'tasks/*.js',
+        'lib/*.js',
         '<%= nodeunit.tests %>'
       ],
       options: {
@@ -29,40 +30,16 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     zip_to_crx: {
-//      missing_src: {
-//        options: {
-//        },
-//        privateKey: "something.pem"
-//      },
       options: {
-        privateKey: "global.pem"
+        privateKey: "test/ssl-keys/global-key.pem"
       },
       one_extension: {
         options: {
-          privateKey: "../ssl-keys/private-key.pem"
+          privateKey: "test/ssl-keys/private-key.pem"
         },
         src: "*.zip",
-        dest: "directory/"
-      }/*,
-      one_with_dest: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        },
-        privateKey: "something.pem",
-        src: "archive.zip",
-        dest: "renamed_archive.crx"
-      },
-      multiple_extensions: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      }*/
+        dest: "distribution/"
+      }
     },
 
     // Unit tests.
@@ -82,7 +59,8 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'zip_to_crx', 'nodeunit']);
+  //grunt.registerTask('test', ['clean', 'zip_to_crx', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
