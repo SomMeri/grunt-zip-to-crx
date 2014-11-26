@@ -50,10 +50,7 @@ Examples:
 Destination property is optional. If the `dest` does not specify filename, e.g. is empty or contains a directory, plugin guesses output filename from input file name.
 
 ### Options
-Zip_to_crx task requires one mandatory option:
-* Property: `privateKey` 
-* Type: `String` 
-* value: A path to pem encoded private key file.
+Zip_to_crx task requires `privateKey` option property. Its value must be a string and must contain path to pem encoded private key file.
 
 Example:
 ```js
