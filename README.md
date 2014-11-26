@@ -28,10 +28,10 @@ grunt.loadNpmTasks('grunt-zip-to-crx');
 ```
 
 ## The "zip_to_crx" task
-The zip_to_crx needs to know three things:
+The zip_to_crx needs to know:
 * which file(s) should be converted into .crx,
 * where to put the result and how to name it,
-* private key to use for signing.
+* private key to be used for signing.
 
 ### Source and Destination
 In your project's Gruntfile, add a section named `zip_to_crx` to the data object passed into `grunt.initConfig()`.
