@@ -34,7 +34,11 @@ The zip_to_crx needs to know:
 * private key to be used for signing.
 
 ### Source and Destination
-In your project's Gruntfile, add a section named `zip_to_crx` to the data object passed into `grunt.initConfig()`.
+Input and output files are configured using the usual `src` and `dest` pairs. `src` may contain either a path towards .zip file or a list of them:
+* `src: 'path/to/file.zip'`,
+* `src: ['path/to/file.zip', 'different/zipped.zip']`,
+* `src: 'all/in/this/directory/*.zip'`,
+
 
 
 ### Options
