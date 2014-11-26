@@ -36,8 +36,8 @@ The zip_to_crx needs to know:
 ### Source and Destination
 Input and output files are configured using the usual `src` and `dest` pairs. Source property `src` may contain either a path towards .zip file or a list of them:
 * `src: 'path/to/file.zip'`,
-* `src: 'all/in/this/directory/*.zip''
-* `src: ['path/to/file.zip', 'different/zipped.zip', 'globbing/*.zip']`.
+* `src: 'all/in/this/directory/\*.zip'`
+* `src: ['path/to/file.zip', 'different/zipped.zip', 'globbing/\*.zip']`.
 
 Destination property `dest` must contain path to single directory or single filename. If it is not specified, plugin will guess output filename from input zip name and place it into the project root.
 
