@@ -35,13 +35,11 @@ The zip_to_crx needs to know:
 
 Private key must be stored in a pem encoded file. OpenSSL is able to [generate](https://www.openssl.org/docs/HOWTO/keys.txt) such files from command line. Use either of these two commands:
 ```
-# generate private key file
+# generate password protected private key file
 openssl genrsa -des3 -out private-key.pem 2048
 # generate private key without password
 openssl genrsa -out private-key.pem 2048
 ```
-
-
 
 ### Source and Destination
 Input and output files are configured using the usual `src` and `dest` pairs. Source property `src` may contain either a path towards .zip file or a list of them.
