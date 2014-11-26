@@ -41,16 +41,13 @@ Examples:
 * `src: 'all/in/this/directory/*.zip'`
 * `src: ['path/to/file.zip', 'different/zipped.zip', 'globbing/*.zip']`.
 
-Destination property `dest` must contain path to single directory or single filename. Directory path must end with a slash `/`. If the `src`property references multipe files,  then the `dest` must contain directory. 
-
-If the `dest` property contains a directory, plugin guesses output filename from input file name.
+Destination property `dest` must contain path to single directory ended by a slash `/` or single filename. If the `src`property references multipe files,  then the `dest` must contain directory. 
 
 Examples:
 * `dest: 'path/to/file.crx'`,
 * `dest: 'path/to/directory/`.
 
-Destination property is optional. If it is not specified, plugin guesses output filename from input file name and places the result into the project root. 
-
+Destination property is optional. If the `dest` does not specify filename, e.g. is empty or contains a directory, plugin guesses output filename from input file name.
 
 ### Options
 Zip_to_crx task requires one mandatory option:
