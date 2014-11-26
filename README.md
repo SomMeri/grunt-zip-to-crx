@@ -6,12 +6,13 @@ Chrome extension is zipped electronically signed file. Signature is distributed 
 
 This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained by grunt team. Use it to pack you extension files. Once you have .zip with `manifest.json` and everything else inside, you can use this plugin to sign it and generate chrome extension distribution (.crx).
 
-Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. Its main advantage is ability to both zip files and sign files, so you probably want to give it a try. Its main disadvantage is speed - it copies everything into temporary directory, then deletes excluded files and packs the result. This is fine on small projects or when you have all extension files in separate directory. However, it may end up copying a lot of files (whole `.git` directory) on some projects and that was very slow.
-
 ## Dependencies
 The project requires [`openssl`](http://www.openssl.org/) installed and available on path. Windows and solaris distributions are available [here](https://www.openssl.org/related/binaries.html). 
 
 Note: I would like to remove this dependency. Unfortunately, that requires me to decode/encode ans1 files. Although decoder is available, I did not found encoder yet.
+
+## Alternatives
+Note: there is another project [grunt-crx](https://github.com/oncletom/grunt-crx) able to generate .crx files. Its main advantage is ability to both zip files and sign files, so you probably want to give it a try. Its main disadvantage is speed - it copies everything into temporary directory, then deletes excluded files and packs the result. This is fine on small projects or when you have all extension files in separate directory. However, it may end up copying a lot of files (whole `.git` directory) on some projects and that was very slow.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
