@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     allInputFilesTripples = this.files;
     allInputFilesTripples.forEach(function(filesTripple) {
       var allSrcZips = filesTripple.src, crxDestination = filesTripple.dest, originalSrcZip = filesTripple.orig.src, error;
-      error = zipsToCrx.thickThing(options, allSrcZips, crxDestination, originalSrcZip, filesTripple.orig.dest, function(error) {
+      error = zipsToCrx.thickThing(options, allSrcZips, crxDestination, originalSrcZip, filesTripple.orig.dest, function(){}, function(error) {
         grunt.log.warn(error);
       });
     });

@@ -28,6 +28,7 @@ exports.zip_to_crx = {
   setUp: function(done) {
     this.wrongPrivateKey = { privateKey: 'doesNotExists.pem' };
     this.goodPrivateKey = { privateKey: 'test/ssl-keys/private-key.pem' };
+    this.faultyPrivateKey = { privateKey: 'test/ssl-keys/faulty-key.pem' };
     this.nullSrcZips = null;
     this.emptySrcZips = [];
     this.doesNotExistsSrcZips = ['doesNotExists.zip'];
@@ -44,7 +45,7 @@ exports.zip_to_crx = {
     // setup here if necessary
     done();
   },
-  error_in_configuration: function(test) {
+  /*error_in_configuration: function(test) {
     var originalSrcZip = this.originalSrcZip;
     var doesNotExistsSrcZip = this.doesNotExistsSrcZips[0];
     var multipleGoodSrcZips = this.multipleGoodSrcZips;
@@ -68,9 +69,20 @@ exports.zip_to_crx = {
       test.equal(onError, 'Source specification `'+originalSrcZip+'` matches multiple ('+multipleGoodSrcZips.length+') files. Corresponding `dest` must be a directory.', 'should be ');
     });
     test.done();
-  }/*,
-  default_options: function(test) {
+  },*/
+  faulty_pem_file: function(test) {
+    var originalSrcZip = this.originalSrcZip;
+    var multipleGoodSrcZips = this.multipleGoodSrcZips;
     test.expect(1);
+    zipsListToCrx.thickThing(this.faultyPrivateKey, this.goodSrcZips, this.fileCrxDestination, this.originalSrcZip, this.originalCrxDestination, function(onError){
+      test.equal(onError, 'wtf', 'should be ');
+    });
+    test.done();
+  }/*,
+  multiple_crx: function(test) {
+    //this.multipleGoodSrcZips = ['test/data/test-1.zip', 'test/data/test-2.zip'];
+    //this.directoryCrxDestination = 'tmp/distribution/';
+    test.expect(2);
 
     var actual = grunt.file.read('tmp/default_options');
     var expected = grunt.file.read('test/expected/default_options');
@@ -78,12 +90,14 @@ exports.zip_to_crx = {
 
     test.done();
   },
-  custom_options: function(test) {
+  single_crx: function(test) {
+    //this.goodSrcZips = ['test/data/test-1.zip'];
+    //this.fileCrxDestination = 'tmp/distribution/file.crx';
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
+    var actual = grunt.file.read('tmp/default_options');
+    var expected = grunt.file.read('test/expected/default_options');
+    test.equal(actual, expected, 'should describe what the default behavior is.');
 
     test.done();
   }*/
