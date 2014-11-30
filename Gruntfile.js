@@ -37,8 +37,8 @@ module.exports = function(grunt) {
         options: {
           privateKey: "test/ssl-keys/private-key.pem"
         },
-        src: "*.zip",
-        dest: "distribution/"
+        src: "test/data/*.zip",
+        dest: "tmp/distribution/"
       }
     },
 
@@ -63,6 +63,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['clean', 'nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask('default', ['jshint', 'clean', 'test', 'zip_to_crx']);
 
 };

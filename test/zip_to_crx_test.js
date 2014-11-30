@@ -106,7 +106,7 @@ exports.zip_to_crx = {
       test.ok(false, "this place should not been reached");
       test.done();
     }, function(error){
-      var expectedErrorstart = "unable to load Private Key", errorCorrect = error.substring(0, expectedErrorstart.length) === expectedErrorstart
+      var expectedErrorstart = "unable to load Private Key", errorCorrect = error.substring(0, expectedErrorstart.length) === expectedErrorstart;
       test.equal(error.substring(0, expectedErrorstart.length), expectedErrorstart, 'should be ');
       test.done();
     });
@@ -128,8 +128,7 @@ exports.zip_to_crx = {
   single_crx: function(test) {
     var fileCrxDestination = this.fileCrxDestination, directoryCrxDestination = this.directoryCrxDestination,
       goodPrivateKey = this.goodPrivateKey, goodSrcZips = this.goodSrcZips,
-      fileCrxDestination = this.fileCrxDestination, originalSrcZip = this.originalSrcZip,
-      originalCrxDestination = this.originalCrxDestination;
+      originalSrcZip = this.originalSrcZip, originalCrxDestination = this.originalCrxDestination;
 
     test.expect(1);
 
