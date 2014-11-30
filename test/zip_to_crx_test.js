@@ -108,7 +108,7 @@ exports.zip_to_crx = {
     }, function(error){
       var expectedErrorstart = "unable to load Private Key", errorCorrect = error.substring(0, expectedErrorstart.length) === expectedErrorstart;
       console.info('********************** UNBELIEVABLE **************************');
-      console.info('********************** UNBELIEVABLE **************************: ' + error.substring(0, expectedErrorstart.length));
+      console.info('********************** UNBELIEVABLE **************************: ' + error);
       test.equal(error.substring(0, expectedErrorstart.length), expectedErrorstart, 'should be ');
       test.done();
     });
