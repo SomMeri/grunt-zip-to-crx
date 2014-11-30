@@ -46,7 +46,7 @@ openssl genrsa -des3 -out private-key.pem 2048
 openssl genrsa -out private-key.pem 2048
 ```
 
-Both create `private-key.pem` file with newly generated private key in current directory.
+Both create `private-key.pem` file with newly generated private key inside current directory.
 
 ### Options
 Zip_to_crx task requires `privateKey` option property. Its value must be a string and must contain path to pem encoded private key file.
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
       compress: {
         main: {
           options: {
-            archive: 'tmp/my-supercool-extension-<version>.zip'
+            archive: 'tmp/my-supercool-extension.zip'
           },
           files: [
             {src: ['_locales/**']},
@@ -165,7 +165,7 @@ module.exports = function(grunt) {
       },
       your_target: {
           // input zip file
-          src: "tmp/my-supercool-extension-<version>.zip", 
+          src: "tmp/my-supercool-extension.zip", 
           // output .crx file
           dest: "distribution/"
       },
