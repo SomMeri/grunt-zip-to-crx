@@ -98,7 +98,7 @@ exports.zip_to_crx = {
     });
     test.done();
   },
-/*  faulty_pem_file: function(test) {
+  faulty_pem_file: function(test) {
     var originalSrcZip = this.originalSrcZip;
     var multipleGoodSrcZips = this.multipleGoodSrcZips;
     test.expect(1);
@@ -110,7 +110,7 @@ exports.zip_to_crx = {
       test.equal(error.substring(0, expectedErrorstart.length), expectedErrorstart, 'should be ');
       test.done();
     });
-  },*/
+  },
   multiple_crx: function(test) {
     var directoryCrxDestination = this.directoryCrxDestination;
     test.expect(2);
