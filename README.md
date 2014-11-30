@@ -54,7 +54,7 @@ Zip_to_crx task requires `privateKey` option property. Its value must be a strin
 Example:
 ```js
 options: {
-  // Location of pem oncoded private key. 
+  // Location of pem encoded private key. 
   privateKey: "../ssl-keys/private-key.pem"
 }
 ```
@@ -76,7 +76,7 @@ Examples:
 Destination property is optional. If the `dest` does not specify filename, e.g. is empty or contains a directory, plugin guesses output filename from input file name.
 
 ### Usage Examples
-First three examples show three different ways how to configure zip_to_crx task. The last example shows whole Grunt.js file, including [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) part.
+First three examples show three different ways how to configure zip_to_crx task. Last example shows whole Grunt.js file, including [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) part.
 
 #### Crx From All Zip Files
 Find all .zip files in `tmp/` directory, sign them and place results into the `distribution` directory:
@@ -84,7 +84,7 @@ Find all .zip files in `tmp/` directory, sign them and place results into the `d
 grunt.initConfig({
   zip_to_crx: {
     options: {
-      // Location of pem oncoded private key. 
+      // Location of pem encoded private key. 
       privateKey: "../ssl-keys/private-key.pem"
     },
     your_target: {
@@ -103,7 +103,7 @@ Convert `tmp/my-supercool-extension-<version>.zip` into `distribution/my-superco
 grunt.initConfig({
   zip_to_crx: {
     options: {
-      // Location of pem oncoded private key. 
+      // Location of pem encoded private key. 
       privateKey: "../ssl-keys/private-key.pem"
     },
     your_target: {
@@ -122,7 +122,7 @@ If the `dest` ends with slash `/`, plugin will treat it as a directory. .crx fil
 grunt.initConfig({
   zip_to_crx: {
     options: {
-      // Location of pem oncoded private key. 
+      // Location of pem encoded private key. 
       privateKey: "../ssl-keys/private-key.pem"
     },
     your_target: {
@@ -160,7 +160,7 @@ module.exports = function(grunt) {
       },
     zip_to_crx: {
       options: {
-        // Location of pem oncoded private key. 
+        // Location of pem encoded private key. 
         privateKey: "../ssl-keys/private-key.pem"
       },
       your_target: {
