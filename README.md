@@ -7,8 +7,8 @@ Chrome extension is zipped electronically signed file. Signature is distributed 
 This plugin is not able to generate zip itself, mostly because [grunt-contrib-compress](https://github.com/gruntjs/grunt-contrib-compress#readme) does a good job and is actively maintained by grunt team. Use it to pack your extension files. Once you have .zip with `manifest.json` and everything else inside, this plugin will sign it and generate chrome extension (.crx) file.
 
 Resources:
-* crx file [specification](https://developer.chrome.com/extensions/crx),
-* general chrome extension [documentation](https://developer.chrome.com/extensions).
+* general chrome extension [documentation](https://developer.chrome.com/extensions),
+* crx file [specification](https://developer.chrome.com/extensions/crx).
 
 ## External Dependencies
 The project requires [`openssl`](http://www.openssl.org/) installed and available on path. Windows and solaris distributions are available [here](https://www.openssl.org/related/binaries.html). 
@@ -33,9 +33,9 @@ grunt.loadNpmTasks('grunt-zip-to-crx');
 
 ## The "zip_to_crx" task
 The zip_to_crx needs to know:
+* private key to be used for signing,
 * which file(s) should be converted into .crx,
-* where to put the result and how to name it,
-* private key to be used for signing.
+* where to put the result and how to name it.
 
 ### Private Key
 Private key must be stored in a pem encoded file. OpenSSL is able to [generate](https://www.openssl.org/docs/HOWTO/keys.txt) such files from command line. Use either of these two commands:
@@ -45,6 +45,8 @@ openssl genrsa -des3 -out private-key.pem 2048
 # generate private key without password
 openssl genrsa -out private-key.pem 2048
 ```
+
+Both create `private-key.pem` file with newly generated private key in current directory.
 
 ### Options
 Zip_to_crx task requires `privateKey` option property. Its value must be a string and must contain path to pem encoded private key file.
