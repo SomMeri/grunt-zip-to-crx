@@ -132,15 +132,13 @@ exports.zip_to_crx = {
 
     test.expect(1);
 
-    setTimeout(function() {
-      deleteFolderRecursive(directoryCrxDestination);
-      zipsListToCrx.thickThing(goodPrivateKey, goodSrcZips, fileCrxDestination, originalSrcZip, originalCrxDestination, function(){
-        test.ok(fs.existsSync(fileCrxDestination), fileCrxDestination + ' was not created');
-        test.done();
-      }, function(error){
-        test.ok(false, "should not err: " + error);
-        test.done();
-      });
-    }, 0); //TODO: investigate and maybe report bug to nodejs
+    deleteFolderRecursive(directoryCrxDestination);
+    zipsListToCrx.thickThing(goodPrivateKey, goodSrcZips, fileCrxDestination, originalSrcZip, originalCrxDestination, function(){
+      test.ok(fs.existsSync(fileCrxDestination), fileCrxDestination + ' was not created');
+      test.done();
+    }, function(error){
+      test.ok(false, "should not err: " + error);
+      test.done();
+    });
   }
 };
