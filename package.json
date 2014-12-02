@@ -1,7 +1,7 @@
 {
   "name": "grunt-zip-to-crx",
   "description": "Converts zipped files into chrome extension file (.crx).",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/SomMeri/grunt-zip-to-crx#readme",
   "author": {
     "name": "Maria Jurcovicova",
