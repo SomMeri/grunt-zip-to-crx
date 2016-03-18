@@ -38,8 +38,15 @@ module.exports = function(grunt) {
      */
     allInputFilesTripples = this.files;
     allInputFilesTripples.forEach(function(filesTripple) {
+
       var allSrcZips = filesTripple.src, crxDestination = filesTripple.dest, originalSrcZip = filesTripple.orig.src, error;
-      error = zipsToCrx.thickThing(options, allSrcZips, crxDestination, originalSrcZip, filesTripple.orig.dest, function(){}, function(error) {
+
+      var doneCallback = function(){
+        grunt.log.writeln("Extension created in: " + crxDestination);
+        done();
+      },
+
+      error = zipsToCrx.thickThing(options, allSrcZips, crxDestination, originalSrcZip, filesTripple.orig.dest, doneCallback, function(error) {
         grunt.log.warn(error);
       });
     });
